@@ -24,6 +24,10 @@ main {
   main {
     width: 400px;
   }
+
+  p {
+    width: 100%;
+  }
 }
 
 .star-icon {
@@ -45,9 +49,20 @@ p {
   width: 90%;
 }
 
+p.given-score {
+  line-height: 1;
+  font-size: 15px;
+  color: $orange;
+  background-color: $medium-grey;
+  border-radius: 20px;
+  padding: 10px 5px;
+  width: 55%;
+  display: block;
+  margin: 20px auto;
+}
+
 .score-container {
   text-align: center;
-  //   margin: 12px 0;
   margin-top: 12px;
   width: 100%;
   & .score {
@@ -76,6 +91,16 @@ p {
   padding: 10px 15px;
   letter-spacing: 1px;
   margin: 10px auto;
+}
+
+article.thank-you {
+  text-align: center;
+
+  & p.thank-you-text {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .attribution {
