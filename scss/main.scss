@@ -2,9 +2,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
 body {
+  background-color: $very-dark-blue;
+  color: $white;
   font-family: 'Overpass', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  background-color: $dark-blue;
+  width: 375px;
+  padding: 25px 20px;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    width: 400px;
+  }
+}
+
+.star-icon {
+  background-color: $medium-grey;
+  border: 0;
+  border-radius: 100%;
+  padding: 15px 15px;
+}
+
+h2 {
+  font-weight: 400;
+  margin: 15px 0;
 }
 
 p {
+  color: $light-grey;
   font-size: 15px;
+  line-height: 1.5;
+  width: 90%;
+}
+
+.score-container {
+  text-align: center;
+  //   margin: 12px 0;
+  margin-top: 12px;
+  width: 100%;
+  & .score {
+    background-color: $medium-grey;
+    color: $light-grey;
+    font-family: inherit;
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+  }
+}
+
+.submit-btn {
+  display: block;
+  background-color: $orange;
+  color: $white;
+  text-transform: uppercase;
+  font-family: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 20px;
+  width: 90%;
+  padding: 10px 15px;
+  letter-spacing: 1px;
+  margin: 10px auto;
+}
+
+.attribution {
+  color: $light-grey;
+  position: fixed;
+  bottom: 10px;
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
