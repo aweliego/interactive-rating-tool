@@ -75,6 +75,16 @@ p.given-score {
     width: 40px;
     height: 40px;
     margin: 10px;
+
+    &:hover {
+      background-color: $light-grey;
+      color: $white;
+      transition: 1s ease-out;
+    }
+  }
+  & .active {
+    background-color: $orange;
+    color: $white;
   }
 }
 
@@ -91,6 +101,12 @@ p.given-score {
   padding: 10px 15px;
   letter-spacing: 1px;
   margin: 10px auto;
+
+  &:hover {
+    background-color: $white;
+    color: $orange;
+    transition: 0.3s ease;
+  }
 }
 
 article.thank-you {
