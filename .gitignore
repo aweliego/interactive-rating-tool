@@ -17,7 +17,7 @@
 
 # Other files and directories
 style-guide.md
-README-template.md
+README.md
 css
 /**/*.js
 node_modules
