@@ -49,6 +49,14 @@ p {
   width: 90%;
 }
 
+.rating-tool {
+  &.hide {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
 p.given-score {
   line-height: 1;
   font-size: 15px;
@@ -76,6 +84,7 @@ p.given-score {
     height: 40px;
     margin: 10px;
 
+    // if no-hover class hasn't been added to element, apply hover styles
     &:not(.no-hover):hover {
       background-color: $light-grey;
       color: $white;
@@ -86,7 +95,7 @@ p.given-score {
     background-color: $orange;
     color: $white;
   }
-
+  // needed to remove hover when button is clicked/active
   & .no-hover {
     pointer-events: none;
   }
@@ -114,7 +123,17 @@ p.given-score {
 }
 
 article.thank-you {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 2s, opacity 0.5s linear 0.1s;
   text-align: center;
+
+  &.show {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+  }
 
   & p.thank-you-text {
     display: block;

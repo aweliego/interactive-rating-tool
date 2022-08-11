@@ -1,3 +1,6 @@
+const ratingTool = document.querySelector('.rating-tool') as HTMLElement | null;
+const thankYou = document.querySelector('.thank-you') as HTMLElement | null;
+
 const scores = document.querySelectorAll(
   '.score'
 ) as NodeListOf<HTMLElement> | null;
@@ -17,24 +20,15 @@ if (scores != null) {
 }
 
 submitBtn?.addEventListener('click', () => {
-  if (main != null) {
-    main.innerHTML = '';
-    const article = document.createElement('article');
-    article.classList.add('thank-you');
-    article.innerHTML = `<header>
-    <img src="../images/illustration-thank-you.svg" alt="" /> <br />
-    <p class="given-score">You selected ${selectedScore} out of 5</p>
+  if (ratingTool != null && thankYou != null) {
+    ratingTool.classList.add('hide');
+    thankYou.classList.add('show');
 
-    <h2>Thank you!</h2>
-  </header>
-  <section>
-    <p class="thank-you-text">
-      We appreciate you taking the time to give a rating. If you ever need
-      more support, don’t hesitate to get in touch!
-    </p>
-  </section>`;
-
-    main.append(article);
+    const thankYouHeader = thankYou.querySelector('header');
+    const scorePar = document.createElement('p');
+    scorePar.classList.add('given-score');
+    scorePar.innerHTML = `You selected ${selectedScore} out of 5`;
+    thankYouHeader?.append(scorePar);
   }
 });
 
