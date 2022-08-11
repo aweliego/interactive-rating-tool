@@ -40,11 +40,11 @@ submitBtn?.addEventListener('click', () => {
 
 const toggleColor = (score: any): void => {
   removeActiveClasses();
-  score.classList.add('active');
+  score.classList.add('active', 'no-hover');
 };
 
 const removeActiveClasses = () => {
-  scores?.forEach((score) => score.classList.remove('active'));
+  scores?.forEach((score) => score.classList.remove('active', 'no-hover'));
 };
 
 if (scores != null) {

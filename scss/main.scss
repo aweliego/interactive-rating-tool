@@ -76,15 +76,19 @@ p.given-score {
     height: 40px;
     margin: 10px;
 
-    &:hover {
+    &:not(.no-hover):hover {
       background-color: $light-grey;
       color: $white;
-      transition: 1s ease-out;
+      transition: 0.3s ease-out;
     }
   }
   & .active {
     background-color: $orange;
     color: $white;
+  }
+
+  & .no-hover {
+    pointer-events: none;
   }
 }
 
