@@ -9,12 +9,15 @@ const submitBtn = document.querySelector<HTMLButtonElement>('#submit-btn');
 
 const main = document.getElementById('main');
 
-let selectedScore: string;
+let selectedScore: string = '0';
 
 if (scores != null) {
   scores.forEach((score) => {
     score.addEventListener('click', () => {
       selectedScore = score.innerHTML;
+      if (submitBtn != null && selectedScore !== '0') {
+        submitBtn.disabled = false;
+      }
     });
   });
 }
@@ -34,11 +37,11 @@ submitBtn?.addEventListener('click', () => {
 
 const toggleColor = (score: any): void => {
   removeActiveClasses();
-  score.classList.add('active', 'no-hover');
+  score.classList.add('active');
 };
 
 const removeActiveClasses = () => {
-  scores?.forEach((score) => score.classList.remove('active', 'no-hover'));
+  scores?.forEach((score) => score.classList.remove('active'));
 };
 
 if (scores != null) {
